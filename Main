@@ -2,8 +2,17 @@ class matrix:
   
   def __init__(vis):
     final = []
-    text = row.split(" ")
-    for
+    temp = []
+    text = vis.split(" ")
+    for i in text:
+      
+      if i == "/":
+        final.append(temp)
+        temp = []
+      else:
+        temp.append(int(i))
+
+    return final
 
   #assuming valid multiplication
   def dot(x, y):
@@ -26,4 +35,3 @@ class matrix:
           temp.append(x[u][i])
         T.append(temp)
       return T
-        
