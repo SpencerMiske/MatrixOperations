@@ -1,38 +1,36 @@
 class matrix:
+  grid = []
 
-  def __init__(vis):
-    final = []
+
+  def __init__(self, vis):
     temp = []
     text = vis.split(" ")
+    
     for i in text:
-  
       if i == "/":
-        final.append(temp)
+        self.grid.append(temp)
         temp = []
       else:
         temp.append(int(i))
   
-    return final
-  
   #assuming valid multiplication
   def dot(x, y):
     z = []
-    for i in range(len(x)): #2
+    for i in range(len(x.grid)): #2
       v = []
-      for u in range(len(y[0])): #3
+      for u in range(len(y.grid[0])): #3
         sum = 0
-        for o in range(len(y)):
-          sum += x[i][o]*y[o][u]
+        for o in range(len(y.grid)):
+          sum += x.grid[i][o]*y.grid[o][u]
         v.append(sum)
       z.append(v)
     return z
   
     def transpose(x):
       T = []
-      for i in range(len(x[0])):
+      for i in range(len(x.grid[0])):
         temp = []
-        for u in range(len(x)):
-          temp.append(x[u][i])
+        for u in range(len(x.grid)):
+          temp.append(x.grid[u][i])
         T.append(temp)
       return T
-  
