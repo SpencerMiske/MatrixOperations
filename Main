@@ -1,37 +1,5 @@
-class matrix:
-  
-  def __init__(vis):
-    final = []
-    temp = []
-    text = vis.split(" ")
-    for i in text:
-      
-      if i == "/":
-        final.append(temp)
-        temp = []
-      else:
-        temp.append(int(i))
+from Class import matrix
 
-    return final
+x = matrix.__init__("1 2 3 / 4 5 6 / 7 8 9 /")
 
-  #assuming valid multiplication
-  def dot(x, y):
-    z = []
-    for i in range(len(x)): #2
-      v = []
-      for u in range(len(y[0])): #3
-        sum = 0
-        for o in range(len(y)):
-          sum += x[i][o]*y[o][u]
-        v.append(sum)
-      z.append(v)
-    return z
-
-    def transpose(x):
-      T = []
-      for i in range(len(x[0])):
-        temp = []
-        for u in range(len(x)):
-          temp.append(x[u][i])
-        T.append(temp)
-      return T
+print(x)
